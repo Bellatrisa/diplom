@@ -50,22 +50,22 @@ if (( array_key_exists('inputNameRID', $_POST)) and
 		doQuery($queryTxt, $_DB);
 		$_DB->commit();
 }
-$smarty->assign("title", "Êàðòî÷êè ÐÈÄ");
-$smarty->assign("create", "Ñîçäàòü íîâûé ÐÈÄ");
-$smarty->assign("createRID", "Äîáàâèòü ÐÈÄ");
-$smarty->assign("nameRID", "Íàçâàíèå ÐÈÄ");
-$smarty->assign("name", "Èìÿ àâòîðà");
-$smarty->assign("surname", "Ôàìèëèÿ àâòîðà");
-$smarty->assign("patronymic", "Îò÷åñòâî àâòîðà");
-$smarty->assign("post", "Äîëæíîñòü");
-$smarty->assign("organization", "Îðãàíèçàöèÿ");
-$smarty->assign("type", "Òèï");
-$smarty->assign("delo", "Íîìåð äåëà");
-$smarty->assign("date", "Äàòà ñîçäàíèÿ ÐÈÄ");
-$smarty->assign("serchbtn", "Èñêàòü");
-$smarty->assign("sortbtn", "Ñîðòèðîâàòü");
-$smarty->assign("sort", array("ïî íàçâàíèþ ÐÈÄ","ïî àâòîðó","ïî íîìåðó äåëà","ïî ñòàòóñó","ïî äàòå ñîçäàíèÿ","ïî äàòå ïîñëåäíåãî èçìåíåíèÿ"));
-$smarty->assign("tHeader", array("¹äåëà" => "1","Íàçâàíèå" => "2","Àâòîð" => "2","Îðãàíèçàöèÿ" => "2","Òèï" => "1","Ñòàòóñ" => "2","Äàòà ñîçäàíèÿ êàðòî÷êè" => "1","Äàòà ïîñëåäíåãî èçìåíåíèÿ" => "1"));
+$smarty->assign("title", "ÐšÐ°Ñ€Ñ‚Ð¾Ñ‡ÐºÐ¸ Ð Ð˜Ð”");
+$smarty->assign("create", "Ð¡Ð¾Ð·Ð´Ð°Ñ‚ÑŒ Ð½Ð¾Ð²Ñ‹Ð¹ Ð Ð˜Ð”");
+$smarty->assign("createRID", "Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ð Ð˜Ð”");
+$smarty->assign("nameRID", "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð Ð˜Ð”");
+$smarty->assign("name", "Ð˜Ð¼Ñ Ð°Ð²Ñ‚Ð¾Ñ€Ð°");
+$smarty->assign("surname", "Ð¤Ð°Ð¼Ð¸Ð»Ð¸Ñ Ð°Ð²Ñ‚Ð¾Ñ€Ð°");
+$smarty->assign("patronymic", "ÐžÑ‚Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð°Ð²Ñ‚Ð¾Ñ€Ð°");
+$smarty->assign("post", "Ð”Ð¾Ð»Ð¶Ð½Ð¾ÑÑ‚ÑŒ");
+$smarty->assign("organization", "ÐžÑ€Ð³Ð°Ð½Ð¸Ð·Ð°Ñ†Ð¸Ñ");
+$smarty->assign("type", "Ð¢Ð¸Ð¿");
+$smarty->assign("delo", "ÐÐ¾Ð¼ÐµÑ€ Ð´ÐµÐ»Ð°");
+$smarty->assign("date", "Ð”Ð°Ñ‚Ð° ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ñ Ð Ð˜Ð”");
+$smarty->assign("serchbtn", "Ð˜ÑÐºÐ°Ñ‚ÑŒ");
+$smarty->assign("sortbtn", "Ð¡Ð¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ");
+$smarty->assign("sort", array("Ð¿Ð¾ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸ÑŽ Ð Ð˜Ð”","Ð¿Ð¾ Ð°Ð²Ñ‚Ð¾Ñ€Ñƒ","Ð¿Ð¾ Ð½Ð¾Ð¼ÐµÑ€Ñƒ Ð´ÐµÐ»Ð°","Ð¿Ð¾ ÑÑ‚Ð°Ñ‚ÑƒÑÑƒ","Ð¿Ð¾ Ð´Ð°Ñ‚Ðµ ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ñ","Ð¿Ð¾ Ð´Ð°Ñ‚Ðµ Ð¿Ð¾ÑÐ»ÐµÐ´Ð½ÐµÐ³Ð¾ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ñ"));
+$smarty->assign("tHeader", array("â„–Ð´ÐµÐ»Ð°" => "1","ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ" => "2","ÐÐ²Ñ‚Ð¾Ñ€" => "2","ÐžÑ€Ð³Ð°Ð½Ð¸Ð·Ð°Ñ†Ð¸Ñ" => "2","Ð¢Ð¸Ð¿" => "1","Ð¡Ñ‚Ð°Ñ‚ÑƒÑ" => "2","Ð”Ð°Ñ‚Ð° ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ñ ÐºÐ°Ñ€Ñ‚Ð¾Ñ‡ÐºÐ¸" => "1","Ð”Ð°Ñ‚Ð° Ð¿Ð¾ÑÐ»ÐµÐ´Ð½ÐµÐ³Ð¾ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ñ" => "1"));
 
 $stmt = $_DB->query('SELECT * FROM wiev_rids');
 while ($row = $stmt->fetch())

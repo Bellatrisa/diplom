@@ -10,7 +10,7 @@ $smarty->cache_lifetime = 120;
 $stmt = $_DB->query('SELECT * FROM status_rid');
 while($row = $stmt->fetch()) $status[] = $row;
 $smarty->assign("status", $status);
-$smarty->assign("title", "Ñòàòóñ ĞÈÄ");
-$smarty->assign("tHeader", array("Ñòàòóñ"=>"2","Ïîÿñíåíèå"=>"3","Íåîáõîäèìûå äîêóìåíòû"=>"7"));
+$smarty->assign("title", "Ğ¡Ñ‚Ğ°Ñ‚ÑƒÑ Ğ Ğ˜Ğ”");
+$smarty->assign("tHeader", array("Ğ¡Ñ‚Ğ°Ñ‚ÑƒÑ"=>"2","ĞŸĞ¾ÑÑĞ½ĞµĞ½Ğ¸Ğµ"=>"3","ĞĞµĞ¾Ğ±Ñ…Ğ¾Ğ´Ğ¸Ğ¼Ñ‹Ğµ Ğ´Ğ¾ĞºÑƒĞ¼ĞµĞ½Ñ‚Ñ‹"=>"7"));
 
 $smarty->display("templates/status.tpl");

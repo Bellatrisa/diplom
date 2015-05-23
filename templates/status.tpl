@@ -5,7 +5,7 @@
 	<div class="col-md-9">
 		<h1>{$title}</h1>
 	</div>
-	<a href="./" class="btn btn-default col-md-3" role="button">На главную</a>
+	<a href="./" class="btn btn-default col-md-3" role="button">РќР° РіР»Р°РІРЅСѓСЋ</a>
 </div>
 <hr>
 <div class="row">

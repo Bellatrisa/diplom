@@ -8,19 +8,39 @@
 </div>
 <hr>
 <div class="row">
-	<div class="col-md-9">
+	<div class="col-md-12">
 		<h3>{$titleStatus}</h3>
 		{foreach from=$status key=i item=foo}
 			{$foo['name']} -&gt; 
 		{/foreach}
-		В архиве.
+		Р’ Р°СЂС…РёРІРµ.
 		<br>
 		<a href="./status.php">{$moreStatus}</a>
 	</div>
-	<div class="col-md-3">
+</div>
+<hr>
+<div class="row">
+	<div class="col-md-6">
+		<h3>{$titleInfo}</h3>
+		<!-- РѕРєРЅРѕ РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ РёРЅС„Рѕ Рѕ Р РР” -->
+		<button type="submit" class="btn btn-danger col-md-6">{$createInfoRID}</button>
+
+
+
+		<!-- РІС‹РІРѕРґ РёР· Р±Рґ -->
+		{foreach from=$rid item=foo}
+		<div class="row col-md-12"><strong>Р”РµР»Рѕ в„–</strong> {$foo['number_case']}</div>
+		<div class="row col-md-12"><strong>РћРїРёСЃР°РЅРёРµ</strong> <a href="{$foo['description']}">СЃРєР°С‡Р°С‚СЊ</a></div>
+		<div class="row col-md-12"><strong>Р РµС„РµСЂР°С‚</strong> <a href="{$foo['referat']}">СЃРєР°С‡Р°С‚СЊ</a></div>
+		<div class="row col-md-12"><strong>Р¤РѕСЂРјСѓР»Р°</strong> <a href="{$foo['formula']}">СЃРєР°С‡Р°С‚СЊ</a></div>
+		<div class="row col-md-12"><strong>Р РёСЃСѓРЅРєРё</strong> <a href="{$foo['image']}">СЃРєР°С‡Р°С‚СЊ</a></div>
+		{/foreach}
+	</div>
+	<div class="col-md-6">
+		<!-- РѕРєРЅРѕ РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ РґРѕРєСѓРјРµРЅС‚РѕРІ -->
 		<h3>{$titleDoc}</h3>
 
-		<button class="btn btn-danger col-md-12" data-toggle="modal" data-target="#myModal">Добавить новый документ{$createDoc|capitalize}</button>
+		<button class="btn btn-danger col-md-6" data-toggle="modal" data-target="#myModal">{$createDoc|capitalize}</button>
 
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
@@ -33,7 +53,7 @@
 					<div class="modal-body">
 							<div class="form-group">
 								<div class="input-group">
-									<label for="inputTypeDoc" class="control-label input-group-addon">тип документа</label>
+									<label for="inputTypeDoc" class="control-label input-group-addon">С‚РёРї РґРѕРєСѓРјРµРЅС‚Р°</label>
 									<select class="form-control" id="inputTypeDoc" name="inputTypeDoc">
 										{foreach from=$typeDoc item=foo}
 											<option value="{$foo['id']}">{$foo['name']}</option>
@@ -42,7 +62,7 @@
 								</div>
 								<br>
 								<div class="input-group">
-									<label for="inputStatusDoc" class="control-label input-group-addon">статус документа</label>
+									<label for="inputStatusDoc" class="control-label input-group-addon">СЃС‚Р°С‚СѓСЃ РґРѕРєСѓРјРµРЅС‚Р°</label>
 									<select class="form-control" id="inputStatusDoc" name="inputStatusDoc">
 										{foreach from=$statusDoc item=foo}
 											<option value="{$statusDoc[id]}">{$foo['name']}</option>
@@ -51,35 +71,24 @@
 								</div>
 								<br>
 								<div class="input-group">
-									<label for="inputdate" class="input-group-addon">Дата подписи</label>
+									<label for="inputdate" class="input-group-addon">Р”Р°С‚Р° РїРѕРґРїРёСЃРё</label>
 									<input class="form-control" type="date" name="inputdate" value="" placeholder="">
 								</div>
 								<br>
 								<input type="file" id="file" name="file" class="btn btn-default col-md-12">
+								<input type="text" name="id_rid" value="{$idRID}" style="display: none;" disabled>
 							</div>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-						<button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Сохранить изменения</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Р—Р°РєСЂС‹С‚СЊ</button>
+						<button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#myModal">РЎРѕС…СЂР°РЅРёС‚СЊ РёР·РјРµРЅРµРЅРёСЏ</button>
 					</div>
 				</form>
 			</div>
 			</div>
 		</div>
-	</div>
-</div>
-<hr>
-<div class="row">
-	<div class="col-md-12">
-		<h3>{$titleInfo}</h3>
-		{foreach from=$rid item=foo}
-		<div class="row col-md-12"><strong>Дело №</strong> {$foo['number_case']}</div>
-		<div class="row col-md-12"><strong>Описание</strong> <a href="{$foo['description']}">скачать</a></div>
-		<div class="row col-md-12"><strong>Реферат</strong> <a href="{$foo['referat']}">скачать</a></div>
-		<div class="row col-md-12"><strong>Формула</strong> <a href="{$foo['formula']}">скачать</a></div>
-		<div class="row col-md-12"><strong>Рисунки</strong> <a href="{$foo['image']}">скачать</a></div>
-		{/foreach}
-		<button type="submit" class="btn btn-danger col-md-3">{$createInfoRID}</button>
+
+		<!-- РІС‹РІРѕРґ РґРѕРєСѓРјРµРЅС‚РѕРІ РёР· Р±Рґ -->
 	</div>
 </div>
 	

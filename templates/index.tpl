@@ -30,7 +30,7 @@
 					<input class="form-control" type="text" name="inputdelo" value="" placeholder="{$delo}">
 					<br>
 					<div class="input-group">
-						<label for="inputstatus" class="control-label input-group-addon">статус РИД</label>
+						<label for="inputstatus" class="control-label input-group-addon">СЃС‚Р°С‚СѓСЃ Р РР”</label>
 						<select class="form-control" id="inputstatus" name="inputstatus">
 							{foreach from=$statusRID item=foo}
 								<option value="{$foo['id']}">{$foo['name']}</option>
@@ -39,12 +39,12 @@
 					</div>
 					<br>
 					<div class="input-group">
-						<label for="inputdate" class="input-group-addon">Дата создания РИД</label>
+						<label for="inputdate" class="input-group-addon">Р”Р°С‚Р° СЃРѕР·РґР°РЅРёСЏ Р РР”</label>
 						<input class="form-control" type="date" name="inputdate" value="" placeholder="{$date}">
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">РћС‚РјРµРЅР°</button>
 					<button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#myModal">{$createRID}</button>
 				</div>
 			</form>
@@ -57,7 +57,7 @@
 <div class="row">
 	<form class="form-inline" role="form" action="">
 	<div class="input-group col-md-3">
-		<input type="text" class="form-control" id="serch" placeholder="поиск">
+		<input type="text" class="form-control" id="serch" placeholder="РїРѕРёСЃРє">
 		<span class="input-group-btn">
 			<button type="submit" class="btn btn-default">{$serchbtn}</button>
 		</span>

@@ -8,7 +8,7 @@ function doQuery( $queryTxt, &$db, $rollback=true ) {
 				$db->rollback();
 			}
 			echo "query: ".$queryTxt."<br>";
-			die ("DB E!!!!rror: ".$errorInfo[2]);
+			die ("DB Error: ".$errorInfo[2]);
 		}
 	}
 ?>

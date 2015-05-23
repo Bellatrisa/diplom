@@ -7,26 +7,29 @@ $smarty = new Smarty;
 $smarty->debugging = true;
 $smarty->caching = false;
 $smarty->cache_lifetime = 120;
+
 $id = $_GET["id_rid"];
 
 if (isset($id)) { 
 	$stmt = $_DB->query("SELECT * FROM rids WHERE id='".$id."'");
 	while($row = $stmt->fetch()) $rid[] = $row;
 	$smarty->assign("rid", $rid);
+
 	$stmt = $_DB->query('SELECT id, name FROM status_rid');
 	while($row = $stmt->fetch()) $status[] = $row;
 	foreach ($status as $key => $value) {
 		if ($value['id'] == $rid[0]['id_status']) $status[$key]['name'] = "<span class='active'>".$value['name']."</span>";
-}
+	}
 
 $smarty->assign("title", $rid[0]['name']);
-$smarty->assign("createDoc", "Äîáàâèòü äîêóìåíò");
-$smarty->assign("createInfoRID", "Äîáàâèòü èíôîğìàöèş ïî ĞÈÄ");
-$smarty->assign("moreStatus", "ïîäğîáíåå î ñòàòóñàõ");
+$smarty->assign("createDoc", "Ğ”Ğ¾Ğ±Ğ°Ğ²Ğ¸Ñ‚ÑŒ Ğ´Ğ¾ĞºÑƒĞ¼ĞµĞ½Ñ‚");
+$smarty->assign("idRID", $id);
+$smarty->assign("createInfoRID", "Ğ”Ğ¾Ğ±Ğ°Ğ²Ğ¸Ñ‚ÑŒ Ğ¸Ğ½Ñ„Ğ¾Ñ€Ğ¼Ğ°Ñ†Ğ¸Ñ Ğ¿Ğ¾ Ğ Ğ˜Ğ”");
+$smarty->assign("moreStatus", "Ğ¿Ğ¾Ğ´Ñ€Ğ¾Ğ±Ğ½ĞµĞµ Ğ¾ ÑÑ‚Ğ°Ñ‚ÑƒÑĞ°Ñ…");
 
-$smarty->assign("titleStatus", "Ñòàòóñ ĞÈÄ");
-$smarty->assign("titleDoc", "Äîêóìåíòû ĞÈÄ");
-$smarty->assign("titleInfo", "Èíôîğìàöèÿ î ĞÈÄ");
+$smarty->assign("titleStatus", "Ğ¡Ñ‚Ğ°Ñ‚ÑƒÑ Ğ Ğ˜Ğ”");
+$smarty->assign("titleDoc", "Ğ”Ğ¾ĞºÑƒĞ¼ĞµĞ½Ñ‚Ñ‹ Ğ Ğ˜Ğ”");
+$smarty->assign("titleInfo", "Ğ˜Ğ½Ñ„Ğ¾Ñ€Ğ¼Ğ°Ñ†Ğ¸Ñ Ğ¾ Ğ Ğ˜Ğ”");
 
 $smarty->assign("status", $status);
 

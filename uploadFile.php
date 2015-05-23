@@ -6,6 +6,6 @@ $uploadfile = $uploaddir.basename($_FILES['file']['name']);
 
 $_DB->query("INSERT INTO `documents`(id_rid, id_status_doc, `date`, file, type_doc) VALUE (".$id.",".$statusDoc.", ".$inputdate.", '".$uploadfile."', ".$typeDoc.")");
 
-if (copy($_FILES['file']['tmp_name'], $uploadfile)) echo "Óñïåøíàÿ çàãðóçêà ôàéëà";
-else echo "Îøèáêà çàãðóçêè";
+if (copy($_FILES['file']['tmp_name'], $uploadfile)) echo "Ð£ÑÐ¿ÐµÑˆÐ½Ð°Ñ Ð·Ð°Ð³Ñ€ÑƒÐ·ÐºÐ° Ñ„Ð°Ð¹Ð»Ð°";
+else echo "ÐžÑˆÐ¸Ð±ÐºÐ° Ð·Ð°Ð³Ñ€ÑƒÐ·ÐºÐ¸";
 ?>
