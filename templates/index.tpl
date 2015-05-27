@@ -92,8 +92,8 @@
 				<td>{$foo['organization']}</td>
 				<td>{$foo['type']}</td>
 				<td>{$foo['status']}</td>
-				<td>{$foo['date_create']}</td>
-				<td>{$foo['date_last_change']}</td>
+				<td class="date">{$foo['date_create']}</td>
+				<td class="date">{$foo['date_last_change']}</td>
 			</tr>
 			{/foreach}
 	</table>

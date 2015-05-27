@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21, created on 2015-05-23 12:00:06
+<?php /* Smarty version Smarty-3.1.21, created on 2015-05-27 16:49:57
          compiled from "templates\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2928556033868ddf04-91816315%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c6b0a554447dc4fc94cdf3464b13a2de7f9b2ae5' => 
     array (
       0 => 'templates\\index.tpl',
-      1 => 1432367999,
+      1 => 1432730995,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.21',
+  'unifunc' => 'content_55603386a93760_54174050',
   'variables' => 
   array (
     'title' => 0,
@@ -39,8 +41,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'rids' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.21',
-  'unifunc' => 'content_55603386a93760_54174050',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_55603386a93760_54174050')) {function content_55603386a93760_54174050($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include 'D:\\OpenServer\\domains\\diplomGul\\diplom\\libs\\plugins\\modifier.capitalize.php';
 ?><?php  $_config = new Smarty_Internal_Config("test.conf", $_smarty_tpl->smarty, $_smarty_tpl);$_config->loadConfigVars("setup", 'local'); ?>
@@ -87,7 +87,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 ">
 					<br>
 					<div class="input-group">
-						<label for="inputstatus" class="control-label input-group-addon">статус РИД</label>
+						<label for="inputstatus" class="control-label input-group-addon">СЃС‚Р°С‚СѓСЃ Р РР”</label>
 						<select class="form-control" id="inputstatus" name="inputstatus">
 							<?php  $_smarty_tpl->tpl_vars['foo'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['foo']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['statusRID']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
@@ -102,13 +102,13 @@ $_smarty_tpl->tpl_vars['foo']->_loop = true;
 					</div>
 					<br>
 					<div class="input-group">
-						<label for="inputdate" class="input-group-addon">Дата создания РИД</label>
+						<label for="inputdate" class="input-group-addon">Р”Р°С‚Р° СЃРѕР·РґР°РЅРёСЏ Р РР”</label>
 						<input class="form-control" type="date" name="inputdate" value="" placeholder="<?php echo $_smarty_tpl->tpl_vars['date']->value;?>
 ">
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">РћС‚РјРµРЅР°</button>
 					<button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#myModal"><?php echo $_smarty_tpl->tpl_vars['createRID']->value;?>
 </button>
 				</div>
@@ -122,7 +122,7 @@ $_smarty_tpl->tpl_vars['foo']->_loop = true;
 <div class="row">
 	<form class="form-inline" role="form" action="">
 	<div class="input-group col-md-3">
-		<input type="text" class="form-control" id="serch" placeholder="поиск">
+		<input type="text" class="form-control" id="serch" placeholder="РїРѕРёСЃРє">
 		<span class="input-group-btn">
 			<button type="submit" class="btn btn-default"><?php echo $_smarty_tpl->tpl_vars['serchbtn']->value;?>
 </button>
@@ -190,9 +190,9 @@ $_smarty_tpl->tpl_vars['foo']->_loop = true;
 </td>
 				<td><?php echo $_smarty_tpl->tpl_vars['foo']->value['status'];?>
 </td>
-				<td><?php echo $_smarty_tpl->tpl_vars['foo']->value['date_create'];?>
+				<td class="date"><?php echo $_smarty_tpl->tpl_vars['foo']->value['date_create'];?>
 </td>
-				<td><?php echo $_smarty_tpl->tpl_vars['foo']->value['date_last_change'];?>
+				<td class="date"><?php echo $_smarty_tpl->tpl_vars['foo']->value['date_last_change'];?>
 </td>
 			</tr>
 			<?php } ?>

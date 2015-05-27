@@ -5,6 +5,7 @@
 	<div class="col-md-9">
 		<h1>{$title}</h1>
 	</div>
+	<a href="./" class="btn btn-default col-md-3" role="button">На главную</a>
 </div>
 <hr>
 <div class="row">
@@ -21,19 +22,64 @@
 <hr>
 <div class="row">
 	<div class="col-md-6">
-		<h3>{$titleInfo}</h3>
 		<!-- окно для добавления инфо о РИД -->
-		<button type="submit" class="btn btn-danger col-md-6">{$createInfoRID}</button>
+		<h3>{$titleInfo} № <strong>{$rid[0]['number_case']}</strong></h3>
+		<button type="submit" class="btn btn-danger col-md-6" data-toggle="modal" data-target="#myModalInfo">{$createInfoRID}</button>
 
-
-
+		<div class="modal fade" id="myModalInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">{$createInfoRID}</h4>
+				</div>
+				<form action="uploadFile.php?type=info" class="form-horizontal" enctype="multipart/form-data" role="form" id="dataInfo" method="post">
+					<div class="modal-body">
+							<div class="form-group">
+								<select class="form-control" id="inputTypeInfo" name="inputTypeInfo">
+									{foreach from=$typeInfo key=i item=foo}
+										<option value="{$foo['col']}">{$foo['name']}</option>
+									{/foreach}
+								</select>
+								<br>
+								<input type="file" id="file" name="file" class="btn btn-default col-md-12">
+							</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">{$close}</button>
+						<button type="submit" class="btn btn-danger" data-toggle="modal" name="id_rid" value="{$idRID}" data-target="#myModalInfo">{$save}</button>
+					</div>
+				</form>
+			</div>
+			</div> 
+		</div>
 		<!-- вывод из бд -->
 		{foreach from=$rid item=foo}
-		<div class="row col-md-12"><strong>Дело №</strong> {$foo['number_case']}</div>
-		<div class="row col-md-12"><strong>Описание</strong> <a href="{$foo['description']}">скачать</a></div>
-		<div class="row col-md-12"><strong>Реферат</strong> <a href="{$foo['referat']}">скачать</a></div>
-		<div class="row col-md-12"><strong>Формула</strong> <a href="{$foo['formula']}">скачать</a></div>
-		<div class="row col-md-12"><strong>Рисунки</strong> <a href="{$foo['image']}">скачать</a></div>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+				{foreach from=$tHeaderInfo key=i item=foo}
+					<th class="input-group col-md-{$foo}">{$i}</th>
+				{/foreach}
+				</tr>
+			</thead>
+				<tr>
+					<td>{$typeInfo[0]['name']}</td>
+					<td>{if $rid[0]['description']!=""}<a target="_blank" href="{$rid[0]['description']}">{$download}</a>{/if}</td>
+				</tr>
+				<tr>
+					<td>{$typeInfo[1]['name']}</td>
+					<td>{if $rid[0]['referat']!=""}<a target="_blank" href="{$rid[0]['referat']}">{$download}</a>{/if}</td>
+				</tr>
+				<tr>
+					<td>{$typeInfo[2]['name']}</td>
+					<td>{if $rid[0]['formula']!=""}<a target="_blank" href="{$rid[0]['formula']}">{$download}</a>{/if}</td>
+				</tr>
+				<tr>
+					<td>{$typeInfo[3]['name']}</td>
+					<td>{if $rid[0]['img']!=""}<a target="_blank" href="{$rid[0]['img']}">{$download}</a>{/if}</td>
+				</tr>
+		</table>
 		{/foreach}
 	</div>
 	<div class="col-md-6">
@@ -49,7 +95,7 @@
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					<h4 class="modal-title" id="myModalLabel">{$createDoc|capitalize}</h4>
 				</div>
-				<form href="rid.php?insert=true" class="form-horizontal" enctype="multipart/form-data" role="form" id="data" method="post">
+				<form action="uploadFile.php?type=doc" class="form-horizontal" enctype="multipart/form-data" role="form" id="data" method="post">
 					<div class="modal-body">
 							<div class="form-group">
 								<div class="input-group">
@@ -65,33 +111,48 @@
 									<label for="inputStatusDoc" class="control-label input-group-addon">статус документа</label>
 									<select class="form-control" id="inputStatusDoc" name="inputStatusDoc">
 										{foreach from=$statusDoc item=foo}
-											<option value="{$statusDoc[id]}">{$foo['name']}</option>
+											<option value="{$foo['id']}">{$foo['name']}</option>
 										{/foreach}
 									</select>
 								</div>
 								<br>
 								<div class="input-group">
 									<label for="inputdate" class="input-group-addon">Дата подписи</label>
-									<input class="form-control" type="date" name="inputdate" value="" placeholder="">
+									<input class="form-control" type="date" name="inputdate" value="">
 								</div>
 								<br>
 								<input type="file" id="file" name="file" class="btn btn-default col-md-12">
-								<input type="text" name="id_rid" value="{$idRID}" style="display: none;" disabled>
 							</div>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-						<button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Сохранить изменения</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">{$close}</button>
+						<button type="submit" class="btn btn-danger" data-toggle="modal" name="id_rid" value="{$idRID}" data-target="#myModal">{$save}</button>
 					</div>
 				</form>
 			</div>
 			</div>
 		</div>
-
+		<div class="row"></div>
 		<!-- вывод документов из бд -->
+		<table class="table table-hover">
+			<thead>
+				<tr>
+				{foreach from=$tHeader key=i item=foo}
+					<th class="input-group col-md-{$foo}">{$i}</th>
+				{/foreach}
+				</tr>
+			</thead>
+				{foreach from=$Doc key=i item=foo}
+				<tr>
+					<td><a target="_blank" href="{$foo['file']}">{$foo['filename']}</a></td>
+					<td>{$foo['type']}</td>
+					<td>{$foo['date']}</td>
+				</tr>
+				{/foreach}
+		</table>
 	</div>
 </div>
 	
 <hr>
-<script>{include file="../scripts/uploadFile.js"}</script>
+
 {include file="footer.tpl"}
