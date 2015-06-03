@@ -14,39 +14,69 @@
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				<h4 class="modal-title" id="myModalLabel">{$createRID|capitalize}</h4>
 			</div>
-			<form href="index.php?insert=true" class="form-horizontal" enctype="multipart/form-data" role="form" id="data" method="post">
+			<form href="index.php?insert=true" class="form-horizontal" data-toggle="validator" enctype="multipart/form-data" id="data" method="post">
 				<div class="modal-body">
-					<input class="form-control" id="inputNameRID" type="text" name="inputNameRID" value="" placeholder="{$nameRID}">
-					<br>
-					<input class="form-control" type="text" name="inputSurname" value="" placeholder="{$surname}">
-					<input class="form-control" type="text" name="inputName" value="" placeholder="{$name}">
-					<input class="form-control" type="text" name="inputpatronymic" value="" placeholder="{$patronymic}">
-					<br>
-					<input class="form-control" type="text" name="inputpost" value="" placeholder="{$post}">
-					<br>
-					<input class="form-control" type="text" name="inputorganization" value="" placeholder="{$organization}">
-					<br>
-					<input class="form-control" type="text" name="inputtype" value="" placeholder="{$type}">
-					<br>
-					<input class="form-control" type="text" name="inputdelo" value="" placeholder="{$delo}">
-					<br>
-					<div class="input-group">
-						<label for="inputstatus" class="control-label input-group-addon">статус РИД</label>
-						<select class="form-control" id="inputstatus" name="inputstatus">
-							{foreach from=$statusRID item=foo}
-								<option value="{$foo['id']}">{$foo['name']}</option>
-							{/foreach}
-						</select>
+					<div class="form-group">
+						<input class="form-control" type="text" required name="inputNameRID" value="" placeholder="{$nameRID}">
+						<div class="help-block with-errors"></div>
 					</div>
 					<br>
-					<div class="input-group">
-						<label for="inputdate" class="input-group-addon">Дата создания РИД</label>
-						<input class="form-control" type="date" name="inputdate" value="" placeholder="{$date}">
+					<div class="form-group">
+						<input class="form-control" type="text" required name="inputSurname" value="" placeholder="{$surname}">
+						<div class="help-block with-errors"></div>
+					</div>
+					<div class="form-group">
+						<input class="form-control" type="text" required name="inputName" value="" placeholder="{$name}">
+						<div class="help-block with-errors"></div>
+					</div>
+					<div class="form-group">
+						<input class="form-control" type="text" required name="inputpatronymic" value="" placeholder="{$patronymic}">
+						<div class="help-block with-errors"></div>
+					</div>
+					<br>
+					<div class="form-group">
+						<input class="form-control" type="text" required name="inputpost" value="" placeholder="{$post}">
+						<div class="help-block with-errors"></div>
+					</div>
+					<br>
+					<div class="form-group">
+						<input class="form-control" type="text" required name="inputorganization" value="" placeholder="{$organization}">
+						<div class="help-block with-errors"></div>
+					</div>
+					<br>
+					<div class="form-group">
+						<input class="form-control" type="text" required name="inputtype" value="" placeholder="{$type}">
+						<div class="help-block with-errors"></div>
+					</div>
+					<br>
+					<div class="form-group">
+						<input class="form-control" type="text" required name="inputdelo" value="" placeholder="{$delo}">
+						<div class="help-block with-errors"></div>
+					</div>
+					<br>
+					<div class="form-group">
+						<div class="input-group">
+							<label for="inputstatus" class="control-label input-group-addon">статус РИД</label>
+							<select class="form-control" required id="inputstatus" name="inputstatus">
+								{foreach from=$statusRID item=foo}
+									<option value="{$foo['id']}">{$foo['name']}</option>
+								{/foreach}
+							</select>
+							<div class="help-block with-errors"></div>
+						</div>
+					</div>
+					<br>
+					<div class="form-group">
+						<div class="input-group">
+							<label for="inputdate" class="input-group-addon">Дата создания РИД</label>
+							<input class="form-control" type="date" required name="inputdate" value="" placeholder="{$date}">
+						</div>
+						<div class="help-block with-errors"></div>
 					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
-					<button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#myModal">{$createRID}</button>
+					<button type="submit" class="btn btn-danger" >{$createRID}</button>
 				</div>
 			</form>
 		</div>
@@ -102,7 +132,7 @@
 </div>
 <hr>
 <script>
-	$('#myForm').validator();
+	$('#data').validator();
 </script>
 
 {include file="footer.tpl"}

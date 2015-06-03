@@ -22,3 +22,7 @@ a {
 .date {
 	font-size: 9pt;
 }
+
+.form-group {
+ margin-bottom: 0; 
+}

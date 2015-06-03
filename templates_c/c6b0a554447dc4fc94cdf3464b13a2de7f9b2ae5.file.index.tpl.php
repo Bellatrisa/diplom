@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21, created on 2015-06-04 02:15:41
+<?php /* Smarty version Smarty-3.1.21, created on 2015-06-04 02:46:14
          compiled from "templates\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2928556033868ddf04-91816315%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c6b0a554447dc4fc94cdf3464b13a2de7f9b2ae5' => 
     array (
       0 => 'templates\\index.tpl',
-      1 => 1433369739,
+      1 => 1433371572,
       2 => 'file',
     ),
   ),
@@ -63,54 +63,84 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 				<h4 class="modal-title" id="myModalLabel"><?php echo smarty_modifier_capitalize($_smarty_tpl->tpl_vars['createRID']->value);?>
 </h4>
 			</div>
-			<form href="index.php?insert=true" class="form-horizontal" enctype="multipart/form-data" role="form" id="data" method="post">
+			<form href="index.php?insert=true" class="form-horizontal" data-toggle="validator" enctype="multipart/form-data" id="data" method="post">
 				<div class="modal-body">
-					<input class="form-control" id="inputNameRID" type="text" name="inputNameRID" value="" placeholder="<?php echo $_smarty_tpl->tpl_vars['nameRID']->value;?>
+					<div class="form-group">
+						<input class="form-control" type="text" required name="inputNameRID" value="" placeholder="<?php echo $_smarty_tpl->tpl_vars['nameRID']->value;?>
 ">
+						<div class="help-block with-errors"></div>
+					</div>
 					<br>
-					<input class="form-control" type="text" name="inputSurname" value="" placeholder="<?php echo $_smarty_tpl->tpl_vars['surname']->value;?>
+					<div class="form-group">
+						<input class="form-control" type="text" required name="inputSurname" value="" placeholder="<?php echo $_smarty_tpl->tpl_vars['surname']->value;?>
 ">
-					<input class="form-control" type="text" name="inputName" value="" placeholder="<?php echo $_smarty_tpl->tpl_vars['name']->value;?>
+						<div class="help-block with-errors"></div>
+					</div>
+					<div class="form-group">
+						<input class="form-control" type="text" required name="inputName" value="" placeholder="<?php echo $_smarty_tpl->tpl_vars['name']->value;?>
 ">
-					<input class="form-control" type="text" name="inputpatronymic" value="" placeholder="<?php echo $_smarty_tpl->tpl_vars['patronymic']->value;?>
+						<div class="help-block with-errors"></div>
+					</div>
+					<div class="form-group">
+						<input class="form-control" type="text" required name="inputpatronymic" value="" placeholder="<?php echo $_smarty_tpl->tpl_vars['patronymic']->value;?>
 ">
+						<div class="help-block with-errors"></div>
+					</div>
 					<br>
-					<input class="form-control" type="text" name="inputpost" value="" placeholder="<?php echo $_smarty_tpl->tpl_vars['post']->value;?>
+					<div class="form-group">
+						<input class="form-control" type="text" required name="inputpost" value="" placeholder="<?php echo $_smarty_tpl->tpl_vars['post']->value;?>
 ">
+						<div class="help-block with-errors"></div>
+					</div>
 					<br>
-					<input class="form-control" type="text" name="inputorganization" value="" placeholder="<?php echo $_smarty_tpl->tpl_vars['organization']->value;?>
+					<div class="form-group">
+						<input class="form-control" type="text" required name="inputorganization" value="" placeholder="<?php echo $_smarty_tpl->tpl_vars['organization']->value;?>
 ">
+						<div class="help-block with-errors"></div>
+					</div>
 					<br>
-					<input class="form-control" type="text" name="inputtype" value="" placeholder="<?php echo $_smarty_tpl->tpl_vars['type']->value;?>
+					<div class="form-group">
+						<input class="form-control" type="text" required name="inputtype" value="" placeholder="<?php echo $_smarty_tpl->tpl_vars['type']->value;?>
 ">
+						<div class="help-block with-errors"></div>
+					</div>
 					<br>
-					<input class="form-control" type="text" name="inputdelo" value="" placeholder="<?php echo $_smarty_tpl->tpl_vars['delo']->value;?>
+					<div class="form-group">
+						<input class="form-control" type="text" required name="inputdelo" value="" placeholder="<?php echo $_smarty_tpl->tpl_vars['delo']->value;?>
 ">
+						<div class="help-block with-errors"></div>
+					</div>
 					<br>
-					<div class="input-group">
-						<label for="inputstatus" class="control-label input-group-addon">статус РИД</label>
-						<select class="form-control" id="inputstatus" name="inputstatus">
-							<?php  $_smarty_tpl->tpl_vars['foo'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['foo']->_loop = false;
+					<div class="form-group">
+						<div class="input-group">
+							<label for="inputstatus" class="control-label input-group-addon">статус РИД</label>
+							<select class="form-control" required id="inputstatus" name="inputstatus">
+								<?php  $_smarty_tpl->tpl_vars['foo'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['foo']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['statusRID']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['foo']->key => $_smarty_tpl->tpl_vars['foo']->value) {
 $_smarty_tpl->tpl_vars['foo']->_loop = true;
 ?>
-								<option value="<?php echo $_smarty_tpl->tpl_vars['foo']->value['id'];?>
+									<option value="<?php echo $_smarty_tpl->tpl_vars['foo']->value['id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['foo']->value['name'];?>
 </option>
-							<?php } ?>
-						</select>
+								<?php } ?>
+							</select>
+							<div class="help-block with-errors"></div>
+						</div>
 					</div>
 					<br>
-					<div class="input-group">
-						<label for="inputdate" class="input-group-addon">Дата создания РИД</label>
-						<input class="form-control" type="date" name="inputdate" value="" placeholder="<?php echo $_smarty_tpl->tpl_vars['date']->value;?>
+					<div class="form-group">
+						<div class="input-group">
+							<label for="inputdate" class="input-group-addon">Дата создания РИД</label>
+							<input class="form-control" type="date" required name="inputdate" value="" placeholder="<?php echo $_smarty_tpl->tpl_vars['date']->value;?>
 ">
+						</div>
+						<div class="help-block with-errors"></div>
 					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
-					<button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#myModal"><?php echo $_smarty_tpl->tpl_vars['createRID']->value;?>
+					<button type="submit" class="btn btn-danger" ><?php echo $_smarty_tpl->tpl_vars['createRID']->value;?>
 </button>
 				</div>
 			</form>
@@ -203,7 +233,7 @@ $_smarty_tpl->tpl_vars['foo']->_loop = true;
 <hr>
 <?php echo '<script'; ?>
 >
-	$('#myForm').validator();
+	$('#data').validator();
 <?php echo '</script'; ?>
 >
 
