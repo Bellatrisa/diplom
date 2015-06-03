@@ -5,7 +5,7 @@ require 'query.php';
 require '/libs/Smarty.class.php';
 //DEFINE ('SMARTY_RESOURCE_CHAR_SET', 'cp1251');
 $smarty = new Smarty;
-$smarty->debugging = true;
+$smarty->debugging = false;
 $smarty->caching = false;
 $smarty->cache_lifetime = 120;
 

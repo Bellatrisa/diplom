@@ -6,6 +6,7 @@
 		<h1>{$title}</h1>
 	</div>
 	<button data-toggle="modal" data-target="#myModal" class="btn btn-danger col-md-3">{$create}</button>
+	<!-- Модальное окно -->
 	<div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 		<div class="modal-content">
@@ -51,6 +52,7 @@
 		</div>
 		</div>
 	</div>
+	<!-- Модальное окно -->
 
 </div>
 <!--<hr>
@@ -99,5 +101,8 @@
 	</table>
 </div>
 <hr>
+<script>
+	$('#myForm').validator();
+</script>
 
 {include file="footer.tpl"}

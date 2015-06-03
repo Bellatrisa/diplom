@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21, created on 2015-05-27 16:49:57
+<?php /* Smarty version Smarty-3.1.21, created on 2015-06-04 02:15:41
          compiled from "templates\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2928556033868ddf04-91816315%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c6b0a554447dc4fc94cdf3464b13a2de7f9b2ae5' => 
     array (
       0 => 'templates\\index.tpl',
-      1 => 1432730995,
+      1 => 1433369739,
       2 => 'file',
     ),
   ),
@@ -54,6 +54,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	</div>
 	<button data-toggle="modal" data-target="#myModal" class="btn btn-danger col-md-3"><?php echo $_smarty_tpl->tpl_vars['create']->value;?>
 </button>
+	<!-- Модальное окно -->
 	<div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 		<div class="modal-content">
@@ -116,6 +117,7 @@ $_smarty_tpl->tpl_vars['foo']->_loop = true;
 		</div>
 		</div>
 	</div>
+	<!-- Модальное окно -->
 
 </div>
 <!--<hr>
@@ -199,6 +201,11 @@ $_smarty_tpl->tpl_vars['foo']->_loop = true;
 	</table>
 </div>
 <hr>
+<?php echo '<script'; ?>
+>
+	$('#myForm').validator();
+<?php echo '</script'; ?>
+>
 
 <?php echo $_smarty_tpl->getSubTemplate ("footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
