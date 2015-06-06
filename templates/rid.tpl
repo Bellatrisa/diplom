@@ -42,12 +42,15 @@
 									{/foreach}
 								</select>
 								<br>
-								<input type="file" id="file" name="file" class="btn btn-default col-md-12">
+								<div class="form-group col-md-12">
+									<input type="file" id="file" name="file" class="btn btn-default" required>
+									<div class="help-block with-errors"></div>
+								</div>
 							</div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">{$close}</button>
-						<button type="submit" class="btn btn-danger" data-toggle="modal" name="id_rid" value="{$idRID}" data-target="#myModalInfo">{$save}</button>
+						<button type="submit" class="btn btn-danger" name="id_rid" value="{$idRID}" >{$save}</button>
 					</div>
 				</form>
 			</div>
@@ -116,17 +119,25 @@
 									</select>
 								</div>
 								<br>
-								<div class="input-group">
-									<label for="inputdate" class="input-group-addon">Дата подписи</label>
-									<input class="form-control" type="date" name="inputdate" value="">
+								<div class="form-group col-md-12">
+									<div class="input-group">
+										<label for="inputdate" class="input-group-addon">Дата подписи</label>
+										<input class="form-control" type="date" name="inputdate" value="" required>
+										<div class="help-block with-errors"></div>
+									</div>
+									<div class="help-block with-errors"></div>
 								</div>
 								<br>
-								<input type="file" id="file" name="file" class="btn btn-default col-md-12">
+								<div class="input-group col-md-12">
+									<input type="file" id="file" name="file" class="btn btn-default" required>
+									<div class="help-block with-errors"></div>
+								</div>
+								
 							</div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">{$close}</button>
-						<button type="submit" class="btn btn-danger" data-toggle="modal" name="id_rid" value="{$idRID}" data-target="#myModal">{$save}</button>
+						<button type="submit" class="btn btn-danger" name="id_rid" value="{$idRID}">{$save}</button>
 					</div>
 				</form>
 			</div>
