@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21, created on 2015-05-27 19:07:13
+<?php /* Smarty version Smarty-3.1.21, created on 2015-06-17 18:40:09
          compiled from "templates\rid.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1915655603397791c79-87729943%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7d3632c2c000b815df2728c5693e796beb35b2d1' => 
     array (
       0 => 'templates\\rid.tpl',
-      1 => 1432739219,
+      1 => 1434478364,
       2 => 'file',
     ),
   ),
@@ -111,14 +111,17 @@ $_smarty_tpl->tpl_vars['foo']->_loop = true;
 									<?php } ?>
 								</select>
 								<br>
-								<input type="file" id="file" name="file" class="btn btn-default col-md-12">
+								<div class="form-group col-md-12">
+									<input type="file" id="file" name="file" class="btn btn-default" required>
+									<div class="help-block with-errors"></div>
+								</div>
 							</div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal"><?php echo $_smarty_tpl->tpl_vars['close']->value;?>
 </button>
-						<button type="submit" class="btn btn-danger" data-toggle="modal" name="id_rid" value="<?php echo $_smarty_tpl->tpl_vars['idRID']->value;?>
-" data-target="#myModalInfo"><?php echo $_smarty_tpl->tpl_vars['save']->value;?>
+						<button type="submit" class="btn btn-danger" name="id_rid" value="<?php echo $_smarty_tpl->tpl_vars['idRID']->value;?>
+" ><?php echo $_smarty_tpl->tpl_vars['save']->value;?>
 </button>
 					</div>
 				</form>
@@ -227,19 +230,27 @@ $_smarty_tpl->tpl_vars['foo']->_loop = true;
 									</select>
 								</div>
 								<br>
-								<div class="input-group">
-									<label for="inputdate" class="input-group-addon">Дата подписи</label>
-									<input class="form-control" type="date" name="inputdate" value="">
+								<div class="form-group col-md-12">
+									<div class="input-group">
+										<label for="inputdate" class="input-group-addon">Дата подписи</label>
+										<input class="form-control" type="date" name="inputdate" value="" required>
+										<div class="help-block with-errors"></div>
+									</div>
+									<div class="help-block with-errors"></div>
 								</div>
 								<br>
-								<input type="file" id="file" name="file" class="btn btn-default col-md-12">
+								<div class="input-group col-md-12">
+									<input type="file" id="file" name="file" class="btn btn-default" required>
+									<div class="help-block with-errors"></div>
+								</div>
+								
 							</div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal"><?php echo $_smarty_tpl->tpl_vars['close']->value;?>
 </button>
-						<button type="submit" class="btn btn-danger" data-toggle="modal" name="id_rid" value="<?php echo $_smarty_tpl->tpl_vars['idRID']->value;?>
-" data-target="#myModal"><?php echo $_smarty_tpl->tpl_vars['save']->value;?>
+						<button type="submit" class="btn btn-danger" name="id_rid" value="<?php echo $_smarty_tpl->tpl_vars['idRID']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['save']->value;?>
 </button>
 					</div>
 				</form>

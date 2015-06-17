@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21, created on 2015-06-04 02:46:14
+<?php /* Smarty version Smarty-3.1.21, created on 2015-06-17 19:33:54
          compiled from "templates\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2928556033868ddf04-91816315%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c6b0a554447dc4fc94cdf3464b13a2de7f9b2ae5' => 
     array (
       0 => 'templates\\index.tpl',
-      1 => 1433371572,
+      1 => 1434555227,
       2 => 'file',
     ),
   ),
@@ -212,8 +212,8 @@ $_smarty_tpl->tpl_vars['foo']->_loop = true;
 				<td><a href="rid.php?id_rid=<?php echo $_smarty_tpl->tpl_vars['foo']->value['id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['foo']->value['name'];?>
 </a></td>
-				<td><?php echo $_smarty_tpl->tpl_vars['foo']->value['authorn'];?>
- <?php echo $_smarty_tpl->tpl_vars['foo']->value['authors'];?>
+				<td><?php echo $_smarty_tpl->tpl_vars['foo']->value['authors'];?>
+ <?php echo $_smarty_tpl->tpl_vars['foo']->value['authorn'];?>
  <?php echo $_smarty_tpl->tpl_vars['foo']->value['authorp'];?>
 </td>
 				<td><?php echo $_smarty_tpl->tpl_vars['foo']->value['organization'];?>

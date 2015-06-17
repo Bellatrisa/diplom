@@ -4,7 +4,7 @@ require 'query.php';
 require '/libs/Smarty.class.php';
 
 $smarty = new Smarty;
-$smarty->debugging = true;
+//$smarty->debugging = true;
 $smarty->caching = false;
 $smarty->cache_lifetime = 120;
 
@@ -66,7 +66,7 @@ if (isset($id)) {
 	while($typeDoc[] = $stmt->fetch())
 	$smarty->assign("typeDoc", $typeDoc);
 
-	$stmt = $_DB->query("SELECT * FROM wiev_documents WHERE id='".$id."'");
+	$stmt = $_DB->query("SELECT * FROM view_documents WHERE id='".$id."'");
 	while($row = $stmt->fetch()) {
 		$arr = explode('/',$row['file']);
 		$row['filename'] = $arr[(count($arr) - 1)];

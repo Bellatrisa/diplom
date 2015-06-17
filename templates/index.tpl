@@ -120,7 +120,7 @@
 			<tr>
 				<td>{$foo['number']}</td>
 				<td><a href="rid.php?id_rid={$foo['id']}">{$foo['name']}</a></td>
-				<td>{$foo['authorn']} {$foo['authors']} {$foo['authorp']}</td>
+				<td>{$foo['authors']} {$foo['authorn']} {$foo['authorp']}</td>
 				<td>{$foo['organization']}</td>
 				<td>{$foo['type']}</td>
 				<td>{$foo['status']}</td>
